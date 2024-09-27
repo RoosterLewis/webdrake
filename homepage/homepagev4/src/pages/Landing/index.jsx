@@ -1,43 +1,43 @@
-import { useState } from "react";
 import { PropTypes } from "prop-types";
 import "./landing.css";
+
 const DynamicImage = ({ url, alt }) => (
   <img src={url} alt={alt || "dynamicImages"} />
 );
+
 DynamicImage.propTypes = {
   url: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
 
-export const Landing = () => {
-  const [toggleImage, setToggleImage] = useState("neutral");
-  const handleImageToggle = (setValue) => () => {
-    setToggleImage(setValue);
-  };
+export const Landing = ({ loginState, handleToggle }) => {
   return (
-    <main className="landing-main">
+    <section className="landing-main">
       <section>
         <div>
-          <DynamicImage url={toggleImage} alt={toggleImage} />
+          <DynamicImage url={loginState} alt={loginState} />
         </div>
         <nav className="landing-nav">
-          <a
+          <button
             href={window.location.href + "tech"}
-            onMouseOver={handleImageToggle("tech")}
-            onMouseLeave={handleImageToggle("netural")}
+            onClick={() => handleToggle("tech")}
           >
             Tech
-          </a>
-          <a
+          </button>
+          <button
             href={window.location.href + "art"}
-            onMouseOver={handleImageToggle("art")}
-            onMouseLeave={handleImageToggle("netural")}
+            onClick={() => handleToggle("art")}
           >
             Art
-          </a>
+          </button>
         </nav>
         <p>@Leevi Kukkonen 2023</p>
       </section>
-    </main>
+    </section>
   );
+};
+
+Landing.propTypes = {
+  loginState: PropTypes.string.isRequired,
+  handleToggle: PropTypes.function,
 };

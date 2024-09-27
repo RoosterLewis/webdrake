@@ -2,7 +2,7 @@ import { ImageSection } from "./ImageSection";
 import louhiImg from "./imgs/louhiart1.png";
 export const Art = () => {
   return (
-    <main>
+    <section>
       <nav>
         <a href={window.location.href.split("/art")[0]}>Return</a>
       </nav>
@@ -12,6 +12,6 @@ export const Art = () => {
       <h3>Digital</h3>
       <p>Digitally produced art categorized by software</p>
       <ImageSection src={louhiImg} alt="image from Saimaannorppamies issue 2" />
-    </main>
+    </section>
   );
 };

@@ -1,6 +1,6 @@
 export const Tech = () => {
   return (
-    <main>
+    <section>
       <nav>
         <a href={window.location.href.split("/art")[0]}>Return</a>
       </nav>
@@ -21,6 +21,6 @@ export const Tech = () => {
       <p>Preferred tasks includes UI programming and optimizing.</p>
 
       <img src="" alt="example image" />
-    </main>
+    </section>
   );
 };
